@@ -1,6 +1,5 @@
 function newTime(currTime) {
   let now = new Date(currTime);
-  let setNewH2 = document.querySelector("h2");
   let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -19,7 +18,6 @@ function newTime(currTime) {
     "Saturday",
   ];
   let day = days[now.getDay()];
-  setNewH2.innerHTML = `${day}, ${hours}:${minutes}`;
   return `${day} ${hours}:${minutes}`;
 }
 function currentTemperature(response) {
@@ -31,23 +29,35 @@ function currentTemperature(response) {
   let humidity = document.querySelector("#hum");
   let windSpeed = document.querySelector("#wind");
   let dateElement = document.querySelector("h2");
-  city.innerHTML = response.data.name;
-  temperature.innerHTML = Math.round(response.data.main.temp);
-  humidity.innerHTML = response.data.main.humidity;
+  let iconElement = document.querySelector(".curr-weather");
+  city.innerHTML = response.data.city;
+  temperature.innerHTML = Math.round(response.data.temperature.current);
+  humidity.innerHTML = response.data.temperature.humidity;
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = newTime(response.data.dt * 1000);
+  dateElement.innerHTML = newTime(response.data.time * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  iconElement.setAttribute("alt", response.data.condition.description);
 }
-function defaultLocation(cityDefault) {
+/*function defaultLocation(cityDefault) {
   event.preventDefault();
   let apiKey = "0544e76dbd90686t4c73ocb475aa7f05";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&units=metric&key=${apiKey}`;
   axios.get(apiUrl).then(currentTemperature);
-}
-let apiKey = "0544e76dbd90686t4c73ocb475aa7f05";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&units=metric&key=${apiKey}`;
+}*/
 
-let input = document.querySelector("#search-form");
-searchForm.addEventListener("submit", findCity);
-let cityDefault = "Kiyv";
-defaultLocation(city);
+let apiKey = "0544e76dbd90686t4c73ocb475aa7f05";
+let city = "Kyiv";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+axios.get(apiUrl).then(currentTemperature);
+//let apiKey = "e34e3e990aba780554aaf28ee3d1bd5f";
+//let city = "Paris";
+//let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+//let input = document.querySelector("#search-form");
+//searchForm.addEventListener("submit", currentTemperature);
+//let cityDefault = "Kiyv";
+
+//defaultLocation(city);
 //let data = newData();
