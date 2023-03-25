@@ -27,7 +27,7 @@ a {
 
 .container {
   margin: 0 auto;
-  margin-top: 160px;
+  margin-top: 90px;
   max-width: 780px;
 }
 .weather-container {
@@ -64,4 +64,17 @@ a {
 }
 .row {
   align-items: center;
+}
+.temperature {
+  font-size: 70px;
+}
+.more-temp {
+  font-size: 27px;
+  margin-left: -15px;
+}
+.curr-weather {
+  display: block;
+  margin-left: 40px;
+  margin-top: -25px;
+  margin-bottom: -38px;
 }

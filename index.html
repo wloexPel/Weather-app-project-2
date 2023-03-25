@@ -17,6 +17,31 @@
   <body>
     <div class="container">
       <div class="weather-container">
+        <form id="search-form">
+          <div class="input-group mb-3">
+            <div class="col-md-8 mx-4">
+              <input
+                type="text"
+                class="form-control form-control-lg search"
+                placeholder="Enter your city"
+                id="search-city"
+              />
+            </div>
+            <div class="input-group-append">
+              <input
+                type="submit"
+                class="btn btn-light btn-block btn-lg search-button"
+                value="Search"
+              />
+              <input
+                type="button"
+                class="btn btn-light btn-block btn-lg search-button"
+                value="Location"
+                id="location1"
+              />
+            </div>
+          </div>
+        </form>
         <h1>Your City</h1>
         <h2></h2>
         <hr />
@@ -40,6 +65,8 @@
             <h5>Tuesday</h5>
             <div class="card">
               <div class="card-body">
+                <img src="media/cloudy.svg" alt="Cloudy Day" height="100" />
+
                 <p class="card-text">7°C -1°C</p>
               </div>
             </div>
@@ -48,6 +75,7 @@
             <h5>Wednesday</h5>
             <div class="card">
               <div class="card-body">
+                <img src="media/rain.svg" alt="Rain" height="100" />
                 <p class="card-text">4°C -1°C</p>
               </div>
             </div>
@@ -56,6 +84,7 @@
             <h5>Thursday</h5>
             <div class="card">
               <div class="card-body">
+                <img mg src="media/cloudy.svg" alt="Cloudy Day" height="100" />
                 <p class="card-text">2°C -6°C</p>
               </div>
             </div>
@@ -64,6 +93,7 @@
             <h5>Friday</h5>
             <div class="card">
               <div class="card-body">
+                <img src="media/clear-day.svg" alt="Clear Day" height="100" />
                 <p class="card-text">1°C -6°C</p>
               </div>
             </div>
@@ -72,6 +102,7 @@
             <h5>Saturday</h5>
             <div class="card">
               <div class="card-body">
+                <img src="media/cloudy.svg" alt="Cloudy Day" height="100" />
                 <p class="card-text">4°C 1°C</p>
               </div>
             </div>
@@ -80,6 +111,7 @@
             <h5>Sunday</h5>
             <div class="card">
               <div class="card-body">
+                <img src="media/cloudy.svg" alt="Cloudy Day" height="100" />
                 <p class="card-text">9°C 4°C</p>
               </div>
             </div>
