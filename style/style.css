@@ -39,6 +39,13 @@ a:hover {
 small {
   border-radius: 3px;
 }
+#current-description {
+  text-transform: capitalize;
+  display: block;
+  margin-left: 90px;
+  margin-top: -15px;
+  margin-bottom: -10px;
+}
 .btn,
 .search {
   box-shadow: 0px 4px 12px rgb(0 0 0 / 9%);
