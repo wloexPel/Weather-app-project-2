@@ -47,17 +47,19 @@ function currentTemperature(response) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&units=metric&key=${apiKey}`;
   axios.get(apiUrl).then(currentTemperature);
 }*/
-
-let apiKey = "0544e76dbd90686t4c73ocb475aa7f05";
-let city = "Kyiv";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-axios.get(apiUrl).then(currentTemperature);
-//let apiKey = "e34e3e990aba780554aaf28ee3d1bd5f";
-//let city = "Paris";
-//let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-//let input = document.querySelector("#search-form");
-//searchForm.addEventListener("submit", currentTemperature);
+function searchCity(city) {
+  let apiKey = "0544e76dbd90686t4c73ocb475aa7f05";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(currentTemperature);
+}
+function selectSearchForm(event) {
+  event.preventDefault();
+  let searchInputElement = document.querySelector("#search-city");
+  searchCity(searchInputElement.value);
+}
+searchCity("Kyiv");
+let input = document.querySelector("#search-form");
+searchForm.addEventListener("submit", selectSearchForm);
 //let cityDefault = "Kiyv";
 
-//defaultLocation(city);
 //let data = newData();
