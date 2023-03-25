@@ -10,21 +10,58 @@ h2 {
   font-size: 27px;
   font-weight: 400;
 }
+hr {
+  border: 1px solid #fff;
+  box-shadow: -3px 3px 9px 1px #00000073;
+}
+
+li {
+  list-style: none;
+}
+h5 {
+  font-size: 18px;
+}
+a {
+  text-decoration: none;
+}
+
 .container {
+  margin: 0 auto;
+  margin-top: 160px;
+  max-width: 780px;
+}
+.weather-container {
   color: #fff;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 30px;
-  max-width: 930px;
-  position: fixed;
+  /*position: fixed;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  border-radius: 10px;
+*/
   border: 1px solid #fff;
+  border-radius: 10px;
   background: linear-gradient(
     0deg,
     rgb(149, 185, 243) 0%,
     rgb(139, 102, 241) 100%
   );
   box-shadow: 2px 9px 44px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  font-size: 15px;
+}
+
+.card {
+  background: transparent;
+  border: 1px solid #fff;
+  box-shadow: 0px 21px 45px rgba(0, 0, 0, 0.1);
+}
+.card-body {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.row {
+  align-items: center;
 }
