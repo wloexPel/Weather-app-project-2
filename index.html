@@ -14,12 +14,12 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather app</title>
   </head>
-  <body>
+  <body background="media/Sky-Clouds-Wallpaper.jpg">
     <div class="container">
       <div class="weather-container">
         <form id="search-form">
           <div class="input-group mb-3">
-            <div class="col-md-8 mx-4">
+            <div class="col-md-10 mx-4">
               <input
                 type="text"
                 class="form-control form-control-lg search"
@@ -33,28 +33,28 @@
                 class="btn btn-light btn-block btn-lg search-button"
                 value="Search"
               />
-              <input
-                type="button"
-                class="btn btn-light btn-block btn-lg search-button"
-                value="Location"
-                id="location1"
-              />
             </div>
           </div>
         </form>
         <h1>Your City</h1>
-        <h2></h2>
+        <h2>Loh</h2>
         <hr />
         <div class="row">
-          <div class="col-3" align="center"></div>
+          <div class="col-3" align="center">
+            <img
+              class="curr-weather"
+              src="media/partly-cloudy-day.svg"
+              alt="Partly Cloudy Day"
+              height="180"
+            />
+          </div>
           <div class="col-6 temperature" align="center">
-            <span id="temp">19</span>
-            <a href="#" id="celcius"> °C </a> |
+            <span id="temp">19</span><a href="#" id="celcius">°C </a> |
             <a href="#" id="fahrenheit"> °F </a>
           </div>
           <div class="col-3 more-temp" align="center">
             <ul>
-              <li>Humidity:<span id="hum">76</span>%</li>
+              <li>Humidity: <span id="hum">76</span>%</li>
               <li>Wind: <span id="wind">23</span> km/h</li>
             </ul>
           </div>
