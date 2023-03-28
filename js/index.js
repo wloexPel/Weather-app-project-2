@@ -21,6 +21,31 @@ function newTime() {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let fullForecast = document.querySelector("#weather-forecast");
+  let forecast = `<div class="row">`;
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    forecast =
+      forecast +
+      `
+            <div class="col-sm-2" align="center">
+              <h5 class="forecast-heading">${day}</h5>
+              <div class="card">
+                <div class="card-body">
+                  <img src="media/rain.svg" alt="Rain" height="100" />
+                  <p class="card-text">
+                    <span class="weather-forecast-max">4°</span
+                    ><span class="weather-forecast-min"> -1°</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          `;
+  });
+  forecast = forecast + `</div>`;
+  fullForecast.innerHTML = forecast;
+}
 function currentTemperature(response) {
   //let city = input.value;
   // city = input.value;
@@ -79,7 +104,7 @@ function showCelciusTemp(event) {
   temperature.innerHTML = Math.round(celciusElement);
 }
 let celciusElement = null;
-
+displayForecast();
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheitTemp);
 
