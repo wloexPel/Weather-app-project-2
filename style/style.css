@@ -30,21 +30,35 @@ h5 {
   font-size: 18px;
 }
 a {
-  color: rgb(51, 84, 204);
+  color: rgb(181, 197, 255);
   text-decoration: none;
 }
 a:hover {
-  color: rgb(75, 87, 174);
+  color: rgb(121, 130, 197);
 }
 small {
   border-radius: 3px;
+  color: #fff;
 }
 #current-description {
+  color: rgb(27, 34, 75);
+  background-color: #ffffffc5;
+  transform: translateY(50%);
+  border-radius: 10px;
+  font-weight: 600;
   text-transform: capitalize;
+  position: relative;
+  text-align: center;
   display: block;
-  margin-left: 90px;
-  margin-top: -15px;
-  margin-bottom: -10px;
+  margin-left: 74px;
+  margin-top: -146px;
+  padding: 5px 10px;
+  visibility: hidden;
+  text-align: center;
+  transition: all 300ms ease-in-out;
+}
+#not-current-description {
+  color: rgb(27, 34, 75);
 }
 .btn,
 .search {
@@ -54,19 +68,32 @@ small {
   color: #fff;
   background: transparent;
 }
-.active {
-  color: rgb(30, 75, 91);
-  cursor: default;
+.img-container {
+  position: relative;
+  display: inline-block;
 }
-.active:hover {
-  color: rgb(30, 75, 91);
+
+.img-container:hover #current-description {
+  /*background-color: rgba(54, 85, 153, 0.5); 
+  border-radius: 4px;*/
+  opacity: 1;
+  transform: scale(1.2);
+  visibility: visible;
+  transition: all 300ms ease-in-out;
+}
+#temp,
+.temperature {
+  color: rgb(27, 34, 75);
 }
 .container {
   margin: 0 auto;
-  margin-top: 90px;
-  max-width: 800px;
+  margin-top: 60px;
+  max-width: 940px;
 }
-
+/*.curr-weather:hover{ 
+  transform: scale(1.2); 
+    transition: all 300ms ease-in-out; 
+}*/
 .weather-container {
   color: #fff;
   padding: 30px;
@@ -103,7 +130,10 @@ small {
 }
 .curr-weather {
   display: block;
-  margin-left: 40px;
-  margin-top: -25px;
-  margin-bottom: -38px;
+  position: relative;
+  margin-left: 44px;
+  margin-top: -87px;
+
+  /* transition: transform 0.3s ease-in-out, filter 3000ms ease-in-out; 
+*/
 }
