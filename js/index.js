@@ -119,15 +119,6 @@ function submitSearchForm(event) {
 let input = document.querySelector("#search-form");
 input.addEventListener("submit", submitSearchForm);
 
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = Math.round((celciusElement * 9) / 5 + 32);
-  celcius.classList.remove("active");
-  fahrenheit.classList.add("active");
-  let temperature = document.querySelector("#temp");
-  temperature.innerHTML = fahrenheitTemperature;
-}
-
 function showCelciusTemp(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temp");
@@ -135,10 +126,6 @@ function showCelciusTemp(event) {
   celcius.classList.add("active");
   temperature.innerHTML = Math.round(celciusElement);
 }
-let celciusElement = null;
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", showFahrenheitTemp);
 
 let celcius = document.querySelector("#celcius");
 celcius.addEventListener("click", showCelciusTemp);
